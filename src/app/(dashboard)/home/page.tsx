@@ -1,11 +1,34 @@
 "use client"
 import React, { useState } from 'react'
 
-const page = () => {
+const Page = () => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    question: '',
+    remark: ''
+  });
 
   const toggleAccordion = (index: number) => {
     setActiveAccordion(activeAccordion === index ? null : index);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    // Reset form
+    setFormData({ question: '', remark: '' });
+    // Close modal
+    setIsModalOpen(false);
   };
 
   const posts = [
@@ -28,6 +51,56 @@ const page = () => {
 
   return (
     <div className='relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden' style={{fontFamily: '"Work Sans", "Noto Sans", sans-serif'}}>
+      {/* Modal Overlay */}
+      {isModalOpen && (
+        <div className='fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-4'>
+          <div className='bg-white rounded-2xl p-6 w-full max-w-md'>
+            <div className='flex justify-between items-center mb-4'>
+              <h3 className='text-xl font-bold text-[#0c141d]'>Create New Question</h3>
+              <button 
+                onClick={() => setIsModalOpen(false)}
+                className='text-[#4573a1] hover:text-[#0c141d]'
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <form onSubmit={handleSubmit} className='space-y-4'>
+              <div>
+                <label className='block text-sm font-medium text-[#0c141d] mb-1'>Question</label>
+                <input
+                  type="text"
+                  name="question"
+                  value={formData.question}
+                  onChange={handleInputChange}
+                  className='w-full px-4 py-2 border border-[#cddbea] rounded-xl focus:outline-none focus:border-[#0066cc]'
+                  placeholder='Enter your question'
+                  required
+                />
+              </div>
+              <div>
+                <label className='block text-sm font-medium text-[#0c141d] mb-1'>Remark</label>
+                <textarea
+                  name="remark"
+                  value={formData.remark}
+                  onChange={handleInputChange}
+                  className='w-full px-4 py-2 border border-[#cddbea] rounded-xl focus:outline-none focus:border-[#0066cc] min-h-[100px] resize-none'
+                  placeholder='Add any additional remarks'
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className='w-full bg-[#0066cc] text-white py-2 rounded-xl font-medium hover:bg-[#0052a3] transition-colors'
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <div className='layout-container flex h-full grow flex-col'>
         <div className='px-4 md:px-40 flex flex-1 justify-center py-3 md:py-5'>
           <div className='layout-content-container flex flex-col max-w-[960px] flex-1'>
@@ -53,7 +126,15 @@ const page = () => {
               </div>
             </div>
 
-            <h2 className='text-[#0c141d] text-xl md:text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5'>Posts</h2>
+            <div className='flex justify-between items-center px-4 pb-3 pt-5'>
+              <h2 className='text-[#0c141d] text-xl md:text-[22px] font-bold leading-tight tracking-[-0.015em]'>Posts</h2>
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className='bg-[#0066cc] text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-[#0052a3] transition-colors'
+              >
+                Create New Question
+              </button>
+            </div>
 
             {posts.map((post, index) => (
               <div key={index} className='mb-2'>
@@ -92,4 +173,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
