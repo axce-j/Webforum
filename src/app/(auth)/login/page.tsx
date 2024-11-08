@@ -1,36 +1,19 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const Page = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (username === '' || password === '') {
       setError('Username and Password are required');
     } else {
       setError('');
-      try {
-        const response = await fetch('/api/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ username, password }),
-        });
-        const data = await response.json();
-        if (response.ok) {
-          setMessage(data.message);
-          console.log('Logging in with', username, password);
-        } else {
-          setError(data.message);
-        }
-      } catch (error) {
-        setError('An error occurred. Please try again.');
-      }
+      // Handle login logic here
+      console.log('Logging in with', username, password);
     }
   };
 
@@ -39,7 +22,6 @@ const Page = () => {
       <form onSubmit={handleSubmit} style={styles.form}>
         <h2 style={styles.title}>Login</h2>
         {error && <p style={styles.error}>{error}</p>}
-        {message && <p style={styles.success}>{message}</p>}
         <div style={styles.inputGroup}>
           <label htmlFor="username" style={styles.label}>Username</label>
           <input
@@ -88,10 +70,6 @@ const styles = {
   },
   error: {
     color: 'red',
-    marginBottom: '1rem',
-  },
-  success: {
-    color: 'green',
     marginBottom: '1rem',
   },
   inputGroup: {
