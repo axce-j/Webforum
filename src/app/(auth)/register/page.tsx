@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 
-const RegistrationPage = () => {
+const page = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -136,4 +136,4 @@ const styles = {
   },
 };
 
-export default RegistrationPage;
+export default page;
