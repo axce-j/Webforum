@@ -1,9 +1,10 @@
 import React from 'react'
+import ActivitiesPage from './components/ActivitiesPage';
 
 const page = () => {
   return (
     <div>
-      Activities page
+      <div className="z-50 relative "><ActivitiesPage/></div>
     </div>
   )
 }
