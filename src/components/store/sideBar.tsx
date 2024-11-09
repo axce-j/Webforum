@@ -13,7 +13,8 @@ const sideBar = () => {
   const path = usePathname();
 
   return (
-    <div className=' h-[100%] w-full md:w-[70px] md:bg-[#611f69]  bg-[#1d1c1d] grid grid-cols-4 md:grid-cols-1 gap-y-4 text-white px-1 text-xs'>
+    <div className='md:fixed h-[100%] w-full md:w-[70px] md:bg-[#611f69]  bg-[#1d1c1d]'>
+    <div className='  grid grid-cols-4 md:grid-cols-1 gap-y-4 text-white px-1 text-xs'>
       <p className='bg-gray-400 text-black w-[45px] mt-3 py-1.5 text-center text-2xl font-semibold rounded-lg mx-auto mb-7 hidden md:block'>U</p>
 
       <Link href='/home' className='col-span-1'>
@@ -75,6 +76,7 @@ const sideBar = () => {
         </div>
         <p className='text-center py-1.5 font-semibold '>More</p>
       </div> */}
+    </div>
     </div>
   )
 }

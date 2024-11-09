@@ -50,7 +50,7 @@ const Page = () => {
   ];
 
   return (
-    <div className='relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden' style={{fontFamily: '"Work Sans", "Noto Sans", sans-serif'}}>
+    <div className='relative flex  flex-col bg-slate-50 group/design-root h-[87dvh] md:h-[95dvh]' style={{fontFamily: '"Work Sans", "Noto Sans", sans-serif'}}>
       {/* Modal Overlay */}
       {isModalOpen && (
         <div className='fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-4'>
@@ -74,7 +74,7 @@ const Page = () => {
                   name="question"
                   value={formData.question}
                   onChange={handleInputChange}
-                  className='w-full px-4 py-2 border border-[#cddbea] rounded-xl focus:outline-none focus:border-[#0066cc]'
+                  className='w-full px-4 py-2 border text-black border-[#cddbea] rounded-xl focus:outline-none focus:border-[#0066cc]'
                   placeholder='Enter your question'
                   required
                 />
@@ -85,7 +85,7 @@ const Page = () => {
                   name="remark"
                   value={formData.remark}
                   onChange={handleInputChange}
-                  className='w-full px-4 py-2 border border-[#cddbea] rounded-xl focus:outline-none focus:border-[#0066cc] min-h-[100px] resize-none'
+                  className='w-full px-4 text-black py-2 border border-[#cddbea] rounded-xl focus:outline-none focus:border-[#0066cc] min-h-[100px] resize-none'
                   placeholder='Add any additional remarks'
                   required
                 />
