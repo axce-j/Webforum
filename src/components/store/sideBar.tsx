@@ -25,13 +25,13 @@ const sideBar = () => {
         />
       </Link>
 
-      <Link href='/dms' className='col-span-1'>
+      {/* <Link href='/dms' className='col-span-1'>
         <TabButton
         name='DMs'
         isSelected={path === '/dms'}
         icon={<IoChatbubblesOutline className='w-6 h-6 mx-auto '/>}
         />
-      </Link>
+      </Link> */}
 
       <Link href='/activities' className='col-span-1'>
         <TabButton
@@ -41,13 +41,13 @@ const sideBar = () => {
         />
       </Link>
 
-      <Link href='/more' className='col-span-1'>
+      {/* <Link href='/more' className='col-span-1'>
         <TabButton
         name='More'
         isSelected={path === '/more'}
         icon={<RiMoreFill className='w-6 h-6 mx-auto '/>}
         />
-      </Link>
+      </Link> */}
 
       {/* <div className='mx-auto '>
         <div className='mx-auto bg-white backdrop-blur-2xl bg-opacity-20 p-[8px] rounded-lg'>
