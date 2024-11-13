@@ -2,7 +2,7 @@
 import React from "react";
 import Top from "@/components/store/top";
 import SideBar from "@/components/store/sideBar";
-
+ 
 function DashboardLayout({
   children,
 }: Readonly<{
@@ -10,6 +10,7 @@ function DashboardLayout({
 }>) {
 
   return (
+    
     <div className="w-full h-[100%] md:p-1 p-0 bg-[#611f69]">
         <Top/>
         <div className="flex">

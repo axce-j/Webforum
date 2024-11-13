@@ -1,16 +1,16 @@
 'use client';
 
 // import React, { useState } from 'react';
-import {
-  Card,
-  // CardHeader,
-  // CardBody,
-  // CardFooter,
-  Typography,
-  Button,
-  // Input,
-  // Textarea,
-} from '@material-tailwind/react';
+// import {
+//   Card,
+//   // CardHeader,
+//   // CardBody,
+//   // CardFooter,
+//   Typography,
+//   Button,
+//   // Input,
+//   // Textarea,
+// } from '@material-tailwind/react';
 
 // import ContactUSImage from '../../../../public/contact_us_image/imag4.jpg';
 
@@ -60,79 +60,74 @@ const ContactPage = () => {
           <div className='flex w-full justify-center sm:absolute sm:top-[300px] '>
             <div className='flex w-full max-w-[900px]  flex-col items-center  justify-center  gap-6    text-black    sm:w-[100%]  sm:flex-row'>
               <div className='flex w-full flex-col gap-6 items-end justify-end '>
-                <Card className='mt-6 w-full rounded-lg  '>
-                  <div className='flex flex-col gap-5 px-6 py-12 '>
-                    <div className='flex flex-col  gap-3'>
-                      <div>
-                        {' '}
-                        <div>
-                          <Typography className='text-[2rem] font-bold text-black'>
-                            {' '}
-                            Need Help?
-                          </Typography>
-                        </div>
-                      </div>
-                      <div>
-                        <Typography className='text-md ont-medium text-gray-600  '>
-                          Our support team will get back to you ASAP via email.
-                        </Typography>
-                      </div>
-                    </div>
-                    <div className='flex w-full flex-col gap-3 text-black sm:flex-row  sm:justify-between'>
-                      <div className='sm:w-[43%]  '>
-                        <label htmlFor='input' className='flex flex-col gap-2'>
-                          {' '}
-                          <span className='font-medium '>Your Name</span>
-                          <input
-                            color='teal'
-                            className='outline-w-[5px] w-full rounded bg-[#f5f5f5] p-2 pl-4 outline-primaryDark sm:text-xs md:text-xs'
-                            placeholder='Enter your name '
-                          />
-                        </label>
-                      </div>
-                      <div className='sm:w-[43%]  '>
-                        <label
-                          htmlFor='input'
-                          className='flex w-full flex-col gap-2'
-                        >
-                          {' '}
-                          <span className='font-medium '>Your Email</span>
-                          <input
-                            color='teal'
-                            className='outline-w-[5px] w-full rounded bg-[#f5f5f5] p-2 pl-4 outline-primaryDark sm:text-xs md:text-xs '
-                            placeholder='Enter your Email'
-                          />
-                        </label>
-                      </div>
-                    </div>
-                    <div className='w-full'>
-                      {' '}
-                      <div className='flex  w-full  flex-col gap-2  text-black'>
-                        <span className='font-medium'>Your Message</span>
-                        <textarea
-                          name='message'
-                          rows={6}
-                          placeholder='Enter your message'
-                          className='  resize-none  
-                      rounded  bg-[#f5f5f5] p-3 pl-4
-                     outline-primaryDark   sm:w-full   '
-                          // className='outline-none focus:ring-transparent focus:border-transparent focus:ring-offset-transparent focus:ring-offset-4 focus:ring-blue-500 focus:border-blue-500'
-                        />
-                      </div>
-                    </div>
-                    <div className='flex w-full justify-start'>
-                      <Button
-                        variant='filled'
-                        className='rounded-lg bg-[rgba(97,31,105)] hover:bg-primaryOrange'
-                      >
-                        Submit
-                      </Button>
-                    </div>
-                  </div>
-                  <div className='flex h-3 w-full justify-end '>
-                    <div className='w-14  rounded-br-lg bg-primaryDark'></div>
-                  </div>
-                </Card>
+              <div className='mt-6 w-full rounded-lg bg-white shadow-md'>
+  <div className='flex flex-col gap-5 px-6 py-12'>
+    <div className='flex flex-col gap-3'>
+      <div>
+        <h2 className='text-2xl font-bold text-black'>
+          Need Help?
+        </h2>
+      </div>
+      <div>
+        <p className='text-md font-medium text-gray-600'>
+          Our support team will get back to you ASAP via email.
+        </p>
+      </div>
+    </div>
+
+    <div className='flex w-full flex-col gap-3 text-black sm:flex-row sm:justify-between'>
+      <div className='sm:w-[43%]'>
+        <label htmlFor='name' className='flex flex-col gap-2'>
+          <span className='font-medium'>Your Name</span>
+          <input
+            id='name'
+            type='text'
+            className='outline-none w-full rounded bg-[#f5f5f5] p-2 pl-4 text-sm md:text-xs'
+            placeholder='Enter your name'
+          />
+        </label>
+      </div>
+
+      <div className='sm:w-[43%]'>
+        <label htmlFor='email' className='flex w-full flex-col gap-2'>
+          <span className='font-medium'>Your Email</span>
+          <input
+            id='email'
+            type='email'
+            className='outline-none w-full rounded bg-[#f5f5f5] p-2 pl-4 text-sm md:text-xs'
+            placeholder='Enter your Email'
+          />
+        </label>
+      </div>
+    </div>
+
+    <div className='w-full'>
+      <div className='flex w-full flex-col gap-2 text-black'>
+        <span className='font-medium'>Your Message</span>
+        <textarea
+          name='message'
+          rows={6}
+          placeholder='Enter your message'
+          className='resize-none rounded bg-[#f5f5f5] p-3 pl-4 outline-none'
+        />
+      </div>
+    </div>
+
+    <div className='flex w-full justify-start'>
+      <button
+        type='submit'
+        className='rounded-lg bg-[#611f69] text-white py-2 px-6 hover:bg-[#9b2c74]'
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+
+  <div className='flex h-3 w-full justify-end'>
+    <div className='w-14 rounded-br-lg bg-[#3a3a3a]'></div>
+  </div>
+</div>
+
 
                 <div className='w-full'>
                   <iframe
@@ -223,17 +218,16 @@ const ContactPage = () => {
                   <div>
                     {' '}
                     <div>
-                      <Typography className='text-[2rem] font-bold text-black'>
-                        {' '}
-                        Need Help?
-                      </Typography>
-                    </div>
+  <h2 className='text-[2rem] font-bold text-black'>
+    Need Help?
+  </h2>
+</div>
                   </div>
                   <div>
-                    <Typography className='text-md ont-medium text-gray-600  '>
-                      Our support team will get back to you ASAP via email.
-                    </Typography>
-                  </div>
+  <p className='text-md font-medium text-gray-600'>
+    Our support team will get back to you ASAP via email.
+  </p>
+</div>
                 </div>
 
                 <div className='w-full'>
@@ -255,85 +249,68 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              <div className='flex w-full items-end justify-end '>
-                <Card className='mt-6 w-full rounded-lg  '>
-                  <div className='flex flex-col gap-5 px-6 py-12 '>
-                    <div className='flex w-full items-center justify-center'>
-                      <div
-                        className='h-32 w-32 animate-bounce-effect'
-                        style={{
-                          background: 'url(/contact_us_image/imag10Light.png)',
-                          // backgroundColor: 'rgba(0,0,0,0.4)',
-                          backgroundSize: 'contain',
-                          aspectRatio: '3/2',
-                          backgroundRepeat: 'no-repeat',
-                          backgroundPosition: 'center',
-                          // backgroundBlendMode: 'overlay',
-                          // borderLeft: '30px solid rgba(74,143,131,1)',
-                          // outline:"none"
-                        }}
-                      ></div>
-                    </div>
-                    <div className='flex w-full flex-col gap-3 text-black sm:flex-row  sm:justify-between'>
-                      <div className='sm:w-[43%]  '>
-                        <label htmlFor='input' className='flex flex-col gap-2'>
-                          {' '}
-                          <span className='font-medium sm:text-sm '>
-                            Your Name
-                          </span>
-                          <input
-                            color='teal'
-                            className='outline-w-[5px] w-full rounded bg-[#f5f5f5] p-2 pl-4 outline-primaryDark sm:text-xs md:text-xs'
-                            placeholder='Enter your name '
-                          />
-                        </label>
-                      </div>
-                      <div className='sm:w-[43%]  '>
-                        <label
-                          htmlFor='input'
-                          className='flex w-full flex-col gap-2'
-                        >
-                          {' '}
-                          <span className='font-medium sm:text-sm'>
-                            Your Email
-                          </span>
-                          <input
-                            color='teal'
-                            className='outline-w-[5px] w-full rounded bg-[#f5f5f5] p-2 pl-4 outline-primaryDark sm:text-xs md:text-xs '
-                            placeholder='Enter your Email'
-                          />
-                        </label>
-                      </div>
-                    </div>
-                    <div className='w-full'>
-                      {' '}
-                      <div className='flex  w-full  flex-col gap-2  text-black'>
-                        <span className='font-medium'>Your Message</span>
-                        <textarea
-                          name='message'
-                          rows={6}
-                          placeholder='Enter your message'
-                          className='  resize-none  
-                 rounded  bg-[#f5f5f5] p-3 pl-4
-                outline-primaryDark    sm:w-full   '
-                          // className='outline-none focus:ring-transparent focus:border-transparent focus:ring-offset-transparent focus:ring-offset-4 focus:ring-blue-500 focus:border-blue-500'
-                        />
-                      </div>
-                    </div>
-                    <div className='flex  justify-start'>
-                      <Button
-                        variant='filled'
-                        className='rounded-lg bg-[rgba(97,31,105)]'
-                      >
-                        Submit
-                      </Button>
-                    </div>
-                  </div>
+              <div className='flex w-full items-end justify-end bg-white rounded-2xl shadow-xl '>
+              <div className='mt-6 w-full rounded-lg'>
+  <div className='flex flex-col gap-5 px-6 py-12'>
+    <div className='flex w-full items-center justify-center'>
+      <div
+        className='h-32 w-32 animate-bounce-effect'
+        style={{
+          background: 'url(/contact_us_image/imag10Light.png)',
+          backgroundSize: 'contain',
+          aspectRatio: '3/2',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }}
+      ></div>
+    </div>
 
-                  <div className='flex h-3 w-full justify-end '>
-                    <div className='w-14  rounded-br-lg bg-primaryDark'></div>
-                  </div>
-                </Card>
+    <div className='flex w-full flex-col gap-3 text-black sm:flex-row sm:justify-between'>
+      <div className='sm:w-[43%]'>
+        <label htmlFor='input' className='flex flex-col gap-2'>
+          <span className='font-medium sm:text-sm'>Your Name</span>
+          <input
+            className='w-full rounded bg-[#f5f5f5] p-2 pl-4 outline-primaryDark sm:text-xs md:text-xs'
+            placeholder='Enter your name'
+          />
+        </label>
+      </div>
+
+      <div className='sm:w-[43%]'>
+        <label htmlFor='input' className='flex w-full flex-col gap-2'>
+          <span className='font-medium sm:text-sm'>Your Email</span>
+          <input
+            className='w-full rounded bg-[#f5f5f5] p-2 pl-4 outline-primaryDark sm:text-xs md:text-xs'
+            placeholder='Enter your email'
+          />
+        </label>
+      </div>
+    </div>
+
+    <div className='w-full'>
+      <div className='flex w-full flex-col gap-2 text-black'>
+        <span className='font-medium'>Your Message</span>
+        <textarea
+          name='message'
+          rows={6}
+          placeholder='Enter your message'
+          className='resize-none rounded bg-[#f5f5f5] p-3 pl-4 outline-primaryDark sm:w-full'
+        />
+      </div>
+    </div>
+
+    <div className='flex justify-start'>
+      <button className='rounded-lg bg-[rgba(97,31,105)] py-2 px-4 text-white'>
+        Submit
+      </button>
+    </div>
+  </div>
+
+  <div className='flex h-3 w-full justify-end'>
+    <div className='w-14 rounded-br-lg bg-primaryDark'></div>
+  </div>
+</div>
+
               </div>
             </div>
           </div>
