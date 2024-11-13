@@ -7,8 +7,8 @@ import { db } from '@/config/FirebaseConfig'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '@/config/FirebaseConfig'
 import { useRouter } from 'next/navigation'
-import { FaSignOutAlt } from 'react-icons/fa'
-import { signOut } from 'firebase/auth'
+// import { FaSignOutAlt } from 'react-icons/fa'
+// import { signOut } from 'firebase/auth'
 
 const Page = () => {
   const [user] = useAuthState(auth);
@@ -119,20 +119,20 @@ const Page = () => {
                   <div
                     className='bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-24 w-24 md:min-h-32 md:w-32'
                   />
-                  <FaUserCircle className="text-gray-500 w-20 h-20 mr-4" />
+                  <FaUserCircle className="text-gray-500 w-20 h-20  " />
                   <div className="flex items-center gap-4">
                     <div className='flex flex-col items-center justify-center'>
                       <p className='text-[#0c141d] text-xl md:text-[22px] font-bold leading-tight tracking-[-0.015em] text-center'>
                         {userDoc?.data()?.username || 'Loading...'}
                       </p>
                     </div>
-                    <button
+                    {/* <button
                       onClick={() => signOut(auth)}
                       className='text-black p-2transition-colors mr-9'
                       title="Logout"
                     >
                       <FaSignOutAlt size={20} />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
