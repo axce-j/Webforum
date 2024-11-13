@@ -60,8 +60,10 @@ const Page = () => {
         });
         router.push('/login');
       }
-    } catch (error) {
+    } 
+    catch (error) {
       setError('Registration failed. Please try again.');
+       
       console.error("Registration error:", error);
     }
   };

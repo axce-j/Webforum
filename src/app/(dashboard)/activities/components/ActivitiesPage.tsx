@@ -82,11 +82,11 @@ const Page = () => {
         id: postRef.id
       };
 
-      console.log("Creating post with data:", postData); // Add this log
+      // console.log("Creating post with data:", postData); // Add this log
 
       await setDoc(postRef, postData);
       
-      console.log("Post created successfully");
+      // console.log("Post created successfully");
       
       setFormData({ title: '', content: '' });
       setIsModalOpen(false);

@@ -11,7 +11,7 @@ export default function Error({
   reset: () => void;
 }) {
   React.useEffect(() => {
-    console.error(error);
+    // console.error(error);
   }, [error]);
 
   return (

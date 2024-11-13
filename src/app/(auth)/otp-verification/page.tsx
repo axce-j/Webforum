@@ -27,9 +27,9 @@ const OTPPage = () => {
       setError('Please enter the complete OTP');
     } else {
       setError('');
-      const otpCode = otp.join('');
+      // const otpCode = otp.join('');
       // Handle OTP verification logic here
-      console.log('Verifying OTP:', otpCode);
+      // console.log('Verifying OTP:', otpCode);
     }
   };
 

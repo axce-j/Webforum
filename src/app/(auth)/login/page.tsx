@@ -22,16 +22,16 @@ const Page = () => {
       try {
         const res = await signInWithEmailAndPassword(email, password);
         if (res && res.user) {
-          console.log("User UID:", res.user.uid);
-          console.log("User Email:", res.user.email);
-          console.log("Full user object:", res.user);
+          // console.log("User UID:", res.user.uid);
+          // console.log("User Email:", res.user.email);
+          // console.log("Full user object:", res.user);
 
           setPassword('');
           setEmail('');
           router.push('/home');
         }
       } catch (error) {
-        console.error("Login error:", error);
+        // console.error("Login error:", error);
         setError('Login failed. Please try again.');
       }
     }
