@@ -5,7 +5,7 @@ const ForgottenPasswordPage = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     // Here you would typically handle the form submission to your backend service
     // For example, you could use fetch or axios to send the email to your server
