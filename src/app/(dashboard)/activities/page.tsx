@@ -20,6 +20,7 @@ interface PostData {
   userId: string;
   title: string;
   content: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   timestamp: any;
 }
 
@@ -29,6 +30,7 @@ interface ReplyData {
   postId: string;
   userId: string;
   content: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   timestamp: any;
 }
 

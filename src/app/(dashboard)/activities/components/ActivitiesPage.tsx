@@ -14,6 +14,7 @@ const Page = () => {
   const router = useRouter();
   
   const [isReplyModalOpen, setIsReplyModalOpen] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [activePost, setActivePost] = useState<any>(null);
   const [replyContent, setReplyContent] = useState('');
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
