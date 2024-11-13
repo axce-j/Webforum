@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, CSSProperties } from 'react';
 
 const ForgottenPasswordPage = () => {
   const [email, setEmail] = useState('');
@@ -34,7 +34,7 @@ const ForgottenPasswordPage = () => {
   );
 };
 
-const styles = {
+const styles : { [key: string]: CSSProperties } =  {
   container: {
     display: 'flex',
     flexDirection: 'column',
