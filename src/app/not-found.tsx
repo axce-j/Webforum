@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import * as React from 'react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Not Found',
@@ -17,13 +18,12 @@ export default function NotFound() {
           Sorry, we couldn’t find the page you’re looking for.
         </p>
         <div className='mt-6'>
-          <a
-            href='/'
-            className='text-base font-medium text-[#451EB2] hover:text-indigo-800'
-          >
-            Go back home
-            <span aria-hidden='true'> &rarr;</span>
-          </a>
+        <Link href='/'>
+  <a className='text-base font-medium text-[#451EB2] hover:text-indigo-800'>
+    Go back home
+    <span aria-hidden='true'> &rarr;</span>
+  </a>
+</Link>
         </div>
       </div>
     </main>

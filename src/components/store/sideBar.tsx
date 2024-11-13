@@ -1,14 +1,14 @@
 import React from 'react'
-import { IoChatbubblesOutline } from "react-icons/io5";
+// import { IoChatbubblesOutline } from "react-icons/io5";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { RiMoreFill } from "react-icons/ri";
+// import { RiMoreFill } from "react-icons/ri";
 import { GoHome } from "react-icons/go";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import TabButton from './tabButton';
 
 
-const sideBar = () => {
+const SideBar = () => {
 
   const path = usePathname();
 
@@ -81,4 +81,4 @@ const sideBar = () => {
   )
 }
 
-export default sideBar
+export default SideBar

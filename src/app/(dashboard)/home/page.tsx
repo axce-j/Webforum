@@ -21,8 +21,8 @@ const Page = () => {
   // State management
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedPost, setSelectedPost] = useState<any>(null);
-  const [replyContent, setReplyContent] = useState('');
+  // const [selectedPost, setSelectedPost] = useState<any>(null);
+  // const [replyContent, setReplyContent] = useState('');
   const [formData, setFormData] = useState({ title: '', content: '' });
 
   useEffect(() => {
