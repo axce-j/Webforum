@@ -1,5 +1,9 @@
 import Link from "next/link";
-
+interface FeatureProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
 export default function Home() {
   return (
     <div className="layout-container flex h-full grow flex-col">
@@ -87,7 +91,7 @@ export default function Home() {
 }
 
 // Feature Component
-function Feature({ title, description, imageUrl }) {
+function Feature({ title, description, imageUrl }: FeatureProps) {
   return (
     <div className="flex flex-col gap-3 pb-3">
       <div
