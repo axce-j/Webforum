@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, CSSProperties } from 'react'
 
 const OTPPage = () => {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
@@ -56,7 +56,7 @@ const OTPPage = () => {
   );
 };
 
-const styles = {
+const styles: { [key: string]: CSSProperties } = {
   container: {
     display: 'flex',
     justifyContent: 'center',
