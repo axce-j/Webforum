@@ -31,7 +31,7 @@ const Page = () => {
           router.push('/home');
         }
       } catch (error) {
-        // console.error("Login error:", error);
+        console.error("Login error:", error);
         setError('Login failed. Please try again.');
       }
     }
