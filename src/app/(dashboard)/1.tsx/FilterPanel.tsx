@@ -1,7 +1,14 @@
 import React from "react";
 
-const FilterPanel = ({ setFilter, setSort }) => (
-    <div className="flex justify-between items-center mt-4">
+
+// Define types for the props
+interface FilterPanelProps {
+  setFilter: (filter: string) => void;
+  setSort: (sort: string) => void;
+}
+
+const FilterPanel: React.FC<FilterPanelProps> = ({ setFilter, setSort }) => (
+  <div className="flex justify-between items-center mt-4">
       <select
         onChange={(e) => setFilter(e.target.value)}
         className="p-2 border rounded-md bg-white shadow-sm text-gray-600"
