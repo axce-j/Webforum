@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 const OTPPage = () => {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [error, setError] = useState('');
-
-  const handleChange = (element, index) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleChange = (element:HTMLInputElement, index: number) => {
     if (/[^0-9]/.test(element.value)) {
       setError('Please enter only numbers');
       return;
@@ -16,12 +16,12 @@ const OTPPage = () => {
     setOtp(newOtp);
 
     // Focus the next input field
-    if (element.nextSibling && element.value) {
+    if (element.nextSibling instanceof HTMLInputElement && element.value) {
       element.nextSibling.focus();
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:React.FormEvent) => {
     e.preventDefault();
     if (otp.some(val => val === '')) {
       setError('Please enter the complete OTP');
@@ -43,9 +43,9 @@ const OTPPage = () => {
             <input
               key={index}
               type="text"
-              maxLength="1"
+              maxLength={1}
               value={otp[index]}
-              onChange={(e) => handleChange(e.target, index)}
+              onChange={(e) => handleChange(e.target as HTMLInputElement, index)}
               style={styles.otpInput}
             />
           ))}
