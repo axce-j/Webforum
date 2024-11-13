@@ -11,7 +11,7 @@ const OTPPage = () => {
       return;
     }
     setError('');
-    let newOtp = [...otp];
+    const newOtp = [...otp];
     newOtp[index] = element.value;
     setOtp(newOtp);
 
