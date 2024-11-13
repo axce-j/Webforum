@@ -1,7 +1,20 @@
 import React from "react";
 
-const ActivityItem = ({ activity }) => (
-    <div className="bg-white shadow-md p-4 rounded-md flex flex-col md:flex-row justify-between items-start md:items-center">
+
+// Define the structure of the activity object
+interface Activity {
+  timestamp: string; // Assuming timestamp is a string, you can use Date if it's already a Date object
+  user: string;
+  content: string;
+  type: 'post' | 'comment'; // Or other types if applicable
+}
+
+
+interface ActivityItemProps {
+  activity: Activity;
+}
+const ActivityItem: React.FC<ActivityItemProps> = ({ activity }) => (
+  <div className="bg-white shadow-md p-4 rounded-md flex flex-col md:flex-row justify-between items-start md:items-center">
       <div className="text-left">
         <p className="text-gray-600 text-sm mb-2">{new Date(activity.timestamp).toLocaleString()}</p>
         <p className="text-lg font-semibold text-gray-900">{activity.user}</p>
